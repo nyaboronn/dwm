@@ -3,6 +3,7 @@
 ## Parches
 
 * [dwm-attachaside-6.4](https://dwm.suckless.org/patches/attachaside/dwm-attachaside-6.4.diff)
+* [dwm-systray-6.3](https://dwm.suckless.org/patches/systray/dwm-systray-6.3.diff)
 
 ## Shortcuts
 
