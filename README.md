@@ -9,6 +9,7 @@
 * **MODKEY**: Windows
 * **Terminal**: Win + Enter
 * **Kill window**: Win + W
+* **Zoom**: Win + z
 
 ## Requisitos
 
@@ -16,6 +17,11 @@
 
 ```
 pacman -S ttf-jetbrains-mono
+```
+
+**Volumen, brillo y micrófono desde el teclado:** libX11
+```
+sudo pacman -S libx11
 ```
 
 ## Instalación
