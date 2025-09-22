@@ -1,30 +1,19 @@
 --- dwm.c
 +++ dwm.c
-@@ -1711,19 +1711,21 @@ tile(Monitor *m) {
- 		return;
- 
- 	if(n > m->nmaster)
--		mw = m->nmaster ? m->ww * m->mfact : 0;
-+		mw = m->nmaster ? (m->ww - (g = gappx)) * m->mfact : 0;
- 	else
- 		mw = m->ww;
- 	for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
- 		if(i < m->nmaster) {
--			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
-+			r = MIN(n, m->nmaster) - i;
-+			h = (m->wh - my - gappx * (r - 1)) / r;
- 			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), False);
--			my += HEIGHT(c);
-+			my += HEIGHT(c) + gappx;
- 		}
- 		else {
--			h = (m->wh - ty) / (n - i);
--			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), False);
--			ty += HEIGHT(c);
-+			r = n - i;
-+			h = (m->wh - ty - gappx * (r - 1)) / r;
-+			resize(c, m->wx + mw + g, m->wy + ty, m->ww - mw - g - (2*c->bw), h - (2*c->bw), False);
-+			ty += HEIGHT(c) + gappx;
- 		}
- }
- 
+@@ -205,6 +205,8 @@ static void setup(void);
+ static void seturgent(Client *c, int urg);
+ static void showhide(Client *c);
+ static void sigchld(int unused);
++static void sighup(int unused);
++static void sigterm(int unused);
+ static void spawn(const Arg *arg);
+ static void tag(const Arg *arg);
+ static void tagmon(const Arg *arg);
+@@ -260,6 +262,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
+ 	[UnmapNotify] = unmapnotify
+ };
+ static Atom wmatom[WMLast], netatom[NetLast];
++static int restart = 0;
+ static int running = 1;
+ static Cur *cursor[CurLast];
+ static Clr **scheme;

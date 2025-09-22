@@ -129,6 +129,8 @@ static const Key keys[] = {
     //  Brillo de la pantalla
 	{0, XF86XK_MonBrightnessUp, 	spawn, SHCMD("brightnessctl set +10%")},
 	{0, XF86XK_MonBrightnessDown, 	spawn, SHCMD("brightnessctl set 10%-")},
+	/* Señal de reinicio sin cerrar la seisón */
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 };
 
 /* button definitions */
