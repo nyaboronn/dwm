@@ -14,7 +14,7 @@ static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 /* Cambiar la fuente a ttf-jetbrains-mono y modificar el size */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=13" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=11";
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=13";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -89,7 +89,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	/* Abrir terminal: sin ShiftMask */
 	{ MODKEY,			            XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	/* Ocultar la raba: b -> o*/
+	{ MODKEY,                       XK_o,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -130,10 +131,14 @@ static const Key keys[] = {
 	//  Micrófono
   	{ 0, XF86XK_AudioMicMute, 		spawn, SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
     //  Brillo de la pantalla
-	{0, XF86XK_MonBrightnessUp, 	spawn, SHCMD("brightnessctl set +10%")},
-	{0, XF86XK_MonBrightnessDown, 	spawn, SHCMD("brightnessctl set 10%-")},
+	{0, XF86XK_MonBrightnessUp, 	spawn, SHCMD("brightnessctl set +5%")},
+	{0, XF86XK_MonBrightnessDown, 	spawn, SHCMD("brightnessctl set 5%-")},
 	/* Señal de reinicio sin cerrar la seisón */
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
+
+	/* Scripts y otros shortcuts*/
+	{ MODKEY|ShiftMask,				XK_F6, 	spawn,       	{.v = (const char*[]){ "wallpapermenu", NULL } } },
+	{ MODKEY,			            XK_b, 	spawn,          {.v = (const char*[]){ "firefox", NULL } } },
 };
 
 /* button definitions */

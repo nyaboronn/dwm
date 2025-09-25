@@ -14,6 +14,9 @@
 * **Terminal**: Win + Enter
 * **Kill window**: Win + W
 * **Zoom**: Win + z (hacer el cliente principal)
+* **Firefox**: Win + b
+* **Togglebar**: Win + o
+* **Script-Wallpapermenu**: Win + Shit + F6 
 
 ## Requisitos
 
