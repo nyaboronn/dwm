@@ -138,6 +138,7 @@ static const Key keys[] = {
 
 	/* Scripts y otros shortcuts*/
 	{ MODKEY|ShiftMask,				XK_F6, 	spawn,       	{.v = (const char*[]){ "wallpapermenu", NULL } } },
+	{ MODKEY,						XK_F7, 	spawn,       	{.v = (const char*[]){ "audio_output_switch", NULL } } },
 	{ MODKEY,			            XK_b, 	spawn,          {.v = (const char*[]){ "firefox", NULL } } },
 };
 
