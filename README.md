@@ -7,6 +7,7 @@
 * [dwm-gaps-6.0](https://dwm.suckless.org/patches/gaps/dwm-gaps-6.0.diff) - espacio entre clientes
 * [dwm-restartsig-20180523-6.2](https://dwm.suckless.org/patches/restartsig/dwm-restartsig-20180523-6.2.diff) - permite reiniciar dwm sin cerrar sesión
 * [dwm-xrdb-6.4](https://dwm.suckless.org/patches/xrdb/dwm-xrdb-6.4.diff) - soporte para leer los colores de xrdb
+* [dwm-hide_vacant_tags-6.4.diff](https://dwm.suckless.org/patches/hide_vacant_tags/dwm-hide_vacant_tags-6.4.diff) - no mostrar los tags sin ventanas
 
 ## Shortcuts
 
@@ -14,7 +15,7 @@
 * **Terminal**: Win + Enter
 * **Kill window**: Win + W
 * **Zoom**: Win + z (hacer el cliente principal)
-* **Firefox**: Win + b
+* **Navegador**: Win + b
 * **Togglebar**: Win + o
 * **Script-Wallpapermenu**: Win + Shit + F6 
 
@@ -80,7 +81,17 @@ Una vez generada la paleta se aplican los colores de la sigueinte forma:
 - **Cerrar sesión** y volver a entrar, o
 - Usando el atajo `Mod+F5` (definido en el patch `xrdb`).
 
+## Notificaciones
 
+Notificaciones de escritorio mediante Dunst, hace uso de los colores de xrdb.
+```bash
+# Instalar Dunst
+sudo pacman -S dunst
+# Script de configuración 
+mkdir -p ~/.config/dunst
+cp ~/dwm/patches/dot_files/generate_config.sh ~/.config/dunst/generate_config.sh
+chmod +x ~/.config/dunst/generate_config.sh
+```
 
 ## Instalación
 
@@ -94,4 +105,14 @@ make clean install
 Ejecutar el binario desde .xinitrc
 ```
 echo "exec dwm" >> ~/.xinitrc
+```
+
+Mi fichero .xinitrc se encuentra en la ruta:
+
+
+
+
+
+```bash
+patches/dot_files/.xinitrc
 ```
