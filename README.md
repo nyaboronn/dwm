@@ -8,6 +8,7 @@
 * [dwm-restartsig-20180523-6.2](https://dwm.suckless.org/patches/restartsig/dwm-restartsig-20180523-6.2.diff) - permite reiniciar dwm sin cerrar sesión
 * [dwm-xrdb-6.4](https://dwm.suckless.org/patches/xrdb/dwm-xrdb-6.4.diff) - soporte para leer los colores de xrdb
 * [dwm-hide_vacant_tags-6.4.diff](https://dwm.suckless.org/patches/hide_vacant_tags/dwm-hide_vacant_tags-6.4.diff) - no mostrar los tags sin ventanas
+* [dwm-statuscmd-20260124-a9aa0d8](https://dwm.suckless.org/patches/statuscmd/dwm-statuscmd-20260124-a9aa0d8.diff) statuscmd
 
 ## Shortcuts
 
