@@ -136,7 +136,13 @@ static const Key keys[] = {
 	{0, XF86XK_MonBrightnessUp, 	spawn, SHCMD("brightnessctl set +5%")},
 	{0, XF86XK_MonBrightnessDown, 	spawn, SHCMD("brightnessctl set 5%-")},
 	/* Señal de reinicio sin cerrar la seisón */
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
+	
+	/* Scripts y otros shortcuts*/
+	{ MODKEY|ShiftMask,				XK_F6, 	spawn,       	{.v = (const char*[]){ "wallpapermenu", NULL } } },
+	{ MODKEY,						XK_F7, 	spawn,       	{.v = (const char*[]){ "audio_output_switch", NULL } } },
+	{ MODKEY,			            XK_b, 	spawn,          {.v = (const char*[]){ "firefox", NULL } } },
+
 };
 
 /* button definitions */
