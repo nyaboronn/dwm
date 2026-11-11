@@ -17,11 +17,11 @@ dwmblocks &
 xrandr --output DP-0 --mode 1920x1080 --rate 165 &
 
 # Para poder subir ficheros desde el navegador
-export XDG_CURRENT_DESKTOP=GTK
-export GTK_USE_PORTAL=0
+export XDG_CURRENT_DESKTOP=GNOME
+export GTK_USE_PORTAL=1
 
 # Servidor de notificaciones
 ~/.config/dunst/generate_config.sh &
 
 # lanzar dwm
-exec dwm
+exec dbus-run-session dwm
